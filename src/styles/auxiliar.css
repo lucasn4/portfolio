@@ -1,0 +1,67 @@
+/* Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .card1, .card2, .card3, .card4 {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .card1 h4, .card2 h4, .card3 h4, .card4 h4 {
+    color: #0d0b28;
+    margin-bottom: 10px;
+  }
+  
+/* Contenedor principal */
+.cards .clickable-image {
+    max-width: 100%; /* Ajusta el tamaño inicial de las imágenes */
+    max-height: 10%;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .card3y4 .clickable-image:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+  }
+  @media (max-width: 768px) {
+  .cards div h4{
+    font-size: 18px;
+  }
+  .cards div ul li p{
+    font-size: 15px; 
+  }
+  }
+  
+  /* Estilo para el overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .overlay img {
+    width: 80%;
+    height: auto;
+    max-height: 80%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    
+  }
+  
+  .overlay:hover {
+    cursor: pointer;
+  }
+  

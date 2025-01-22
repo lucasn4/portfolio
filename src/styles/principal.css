@@ -1,0 +1,522 @@
+body {
+    font-family: 'ONEST', sans-serif;
+    color: #C1B8D9;
+    background: radial-gradient(125% 125% at 50% 10%, #000 40%, #63e 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+.principal {
+    position: relative;
+    padding-right: 5%;
+    margin-left: 10%;
+}
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #63e;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+.listanav {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.listanav li {
+    text-align: center;
+    cursor: pointer;
+}
+
+.listanav li i {
+    margin-right: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav{
+        flex-direction: column;
+        align-items: stretch; /
+    }
+    .listanav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .listanav.open {
+        background-color: rgba(101, 51, 238, 0.497);
+        display: flex;
+        color: white;
+    }
+}
+#fotoperfil{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 4px solid #C1B8D9;
+    margin: 10px;
+    pointer-events: none;
+}
+/* Hablar */
+#ayudavoz {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgb(42, 39, 71);
+  border-radius: 50%;
+  font-size: 25px;
+  z-index: 1000;
+}
+#microfono {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #C1B8D9;
+  color: rgb(42, 39, 71);
+  z-index: 1000;
+  border: 4px solid rgb(42, 39, 71);
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 25px;
+}
+/*boton subir*/
+#scrollTop {
+  display: none; /* Por defecto oculto */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #C1B8D9;
+  color: rgb(42, 39, 71);
+  border: 4px solid rgb(42, 39, 71);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#scrollTop.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#scrollTop:hover {
+  background-color: rgb(42, 39, 71);
+  color: #C1B8D9;
+  border: 4px solid #C1B8D9;
+}
+
+#scrollTop:not(.show) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+
+/* Titles and Subtitles */
+.tituloysub {
+    margin-top: 100px;
+}
+
+#fotoperfil::before {
+    font-size: 9rem;
+}
+
+.tituloysub h1 {
+    font-size: 35px;
+}
+
+.tituloysub h1 a {
+    text-decoration: none;
+    font-size: x-small;
+    position: relative;
+    margin: 10px;
+    top: -15px;
+    color: #0078D4;
+}
+
+.tituloysub h2 {
+    margin: 5px;
+}
+.fotoynombre{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+.fotoynombre .textoh1{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;    /* Centra verticalmente */
+    text-align: center;     /* Opcional: centra el texto */
+}
+@media (max-width: 768px) {
+    .tituloysub{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center;    /* Centra verticalmente */
+        height: 100vh;
+    }
+    .fotoynombre{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center;    /* Centra verticalmente */
+        
+    }
+    .tituloysub h1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center;    /* Centra verticalmente */
+        
+    }
+}
+
+
+.botonescontacto{
+    text-align: left;
+}
+.botonescontacto button{
+    align-items: left;
+    margin: 10px;
+    height: 40px;
+    width: 120px;
+    font-size: large;
+    border-radius: 10px;
+}
+.botonescontacto button:hover{
+    align-items: left;
+    margin: 10px;
+    height: 40px;
+    width: 120px;
+    font-size: large;
+    border-radius: 10px;
+    cursor:pointer;
+}
+.botonescontacto .linkedin{
+    background-color: #0077b5;
+    color: white;
+}
+.botonescontacto .github{
+    background-color: #F0F6FC;
+}
+.botonescontacto .mail{
+    background-color: #0078D4;
+    color: white;
+    width: 300px;
+}
+.botonescontacto .mail:hover{
+    background-color: #0078D4;
+    color: white;
+    width: 300px;
+    cursor:pointer;
+}
+.botonescontacto i{
+    margin-right: 5px;
+}
+#sobremi{
+    margin-top: 300px;
+}
+#sobremi i{
+    margin-right: 10px;
+}
+#formacion{
+    margin-top: 350px;
+}
+#formacion i{
+    margin-right: 10px;
+}
+#proyectos{
+    margin-top: 350px;
+}
+#proyectos i{
+    margin-right: 10px;
+}
+#porque{
+    margin-top: 350px;
+}
+#porque i{
+    margin-right: 10px;
+}
+
+p{
+    font-weight: bold;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-template-rows: 1fr; /* Dos filas iguales en altura */
+    gap: 20px;
+    align-items: stretch;
+}
+.card1{
+    border-radius: 10px;
+    color: #C1B8D9;
+    background: radial-gradient(
+        ellipse 80% 80% at 50% -20%, 
+        rgba(120, 119, 198, 0.3),#201E24
+      );
+    padding: 10px;
+    grid-row: 1 ; /* Primera fila */
+    grid-column: 1; /* Primera columna */
+}
+.cuadrado{
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000000;
+}
+.card2{
+    border-radius: 10px;
+    color: #C1B8D9;
+    background: radial-gradient(
+        ellipse 80% 80% at 50% -20%, 
+        rgba(120, 119, 198, 0.3),#201E24
+      );
+    padding: 10px;
+    grid-row: 1 ; /* Primera fila */
+    grid-column: 2; /* Segunda columna */
+}
+.card3y4{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr); /* Dos filas iguales en altura */
+    row-gap:  20px;
+    align-items: stretch;
+    height: 100%; /* Altura total de la cuadrícula */
+}
+.card3{
+    border-radius: 10px;
+    color: #C1B8D9;
+    background: radial-gradient(
+        ellipse 80% 80% at 50% -20%, 
+        rgba(120, 119, 198, 0.3),#201E24
+      );
+    padding: 10px;
+    grid-column: 3; /* Tercera columna */
+    grid-row: 1; /* Primera mitad de la tercera columna */
+    
+}
+.card4{
+    border-radius: 10px;
+    color: #C1B8D9;
+    background: radial-gradient(
+        ellipse 80% 80% at 50% -20%, 
+        rgba(120, 119, 198, 0.3),#201E24
+      );
+    padding: 10px;
+    grid-column: 3; /* Tercera columna */
+    grid-row: 2; /* Segunda mitad de la tercera columna */
+    
+}
+.cards p{
+    font-size: 10px;
+}
+.badges{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+}
+.badge{
+    padding: 6px;
+    border-radius: 5px;
+    color: white;
+}
+#figma{
+    background-color: #A259FF;
+}
+#react{
+    background-color: #61DAFB;
+}
+#html{
+    background-color: #E34F26;
+}
+#css{
+    background-color: #1572B6;
+}
+#js{
+    background-color: #F7DF1E;
+}
+#express{
+    background-color: #000000;
+}
+#nodejs{
+    background-color: #339933;
+}
+#mongodb{
+    background-color: #47A248;
+}
+#mysql{
+    background-color: #4479A1;
+}
+#python{
+    background-color: #3776AB;
+}
+#github{
+    background-color: #333333;
+}
+#reactnative{
+    background-color: #00B0FF;
+}
+  
+/***********************    CONTACTO    ***************************/
+#contacto {
+    margin-top: 20%;
+    margin-bottom: 20%;
+    padding: 10px;
+}
+
+#contacto i {
+    margin-right: 10px;
+}
+
+#contacto ul {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    flex-wrap: wrap;  /* Permite el contenido en filas */
+}
+
+.listacontactos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.listacontactos li {
+    width: 25%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.listacontactos li a {
+    text-decoration: none;
+    color: #C1B8D9;
+}
+.listacontactos li a:hover{
+    text-decoration: underline;
+    color: #63e;
+}
+
+@media (max-width: 768px) {  /* Media query para pantallas pequeñas */
+    #contacto ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .listacontactos li {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/***********************    TECNOLOGIAS    ***************************/
+
+#tecnologias{
+    
+    margin-bottom: 20%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: auto; /* Ajuste automático para filas */
+    gap: 10px; /* Espaciado entre los elementos */
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: white;
+}
+.emailylinks{
+    width: 100%;
+}
+.formabajo{
+    width: 60%;
+    display: flex;
+}
+#formulario{
+    padding: 10px;
+    border-bottom: 2px solid #C1B8D9;
+}
+.textareaabajo{
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+}
+.enviarabajo{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 3px solid #C1B8D9;
+    margin-bottom: 10px;
+}
+.listalinks{
+    width: 100%;
+}
+/***********************    FOOTER    ***************************/
+footer{
+    text-align: center;
+    background-color: #392F2F;
+    color: white;
+    text-align: center;    /* Centra el contenido del footer */
+    padding: 20px;     /* Espacio entre la línea y el texto */
+    position: relative;
+}
+footer::before {
+    content: "";                /* Pseudo-elemento vacío para la línea */
+    position: absolute;         /* Posición relativa al footer */
+    top: 0;                     /* Línea en la parte superior del footer */
+    left: 50%;                  /* Punto de referencia al centro */
+    transform: translateX(-50%);/* Centra la línea horizontalmente */
+    width: 70%;                 /* Línea ocupa el 70% del ancho del footer */
+    height: 2px;                /* Grosor de la línea */
+    background-color: white;    /* Color de la línea */
+  }
