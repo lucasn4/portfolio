@@ -63,7 +63,6 @@ export const principal = () => {
 
        recognition.onend = (event) => {
            setIsListening(false);
-           redireccionar(event);
        };
    }
 
@@ -93,21 +92,28 @@ export const principal = () => {
    };
 
    const redireccionar = (texto) => {
-    const texts = texto;
-    const textolimpio = texts.replace(/[.,\/#!$%\^&\*;:{}=\-_`~() \t\r\n]/g, "");
-    console.log(textolimpio);
-    if (textolimpio === "Sobremi"|| textolimpio === "Sobremí") {
-        document.getElementById("sobremi").scrollIntoView({ behavior: 'smooth' });
-    } else if (textolimpio === "Formaciónacadémica") {
-        document.getElementById("formacion").scrollIntoView({ behavior: 'smooth' });
-    } else if (textolimpio === "Proyectos") {
-        document.getElementById("proyectos").scrollIntoView({ behavior: 'smooth' });
-    } else if (textolimpio === "Contacto") {
-        document.getElementById("contacto").scrollIntoView({ behavior: 'smooth' });
-    } else if (textolimpio === "Arriba") {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    const textolimpio = texto.replace(/[.,\/#!$%\^&\*;:{}=\-_`~() \t\r\n]/g, "")
+    .toLowerCase();
+    const secciones = {
+        "sobremí": "sobremi",
+        "formaciónacadémica": "formacion",
+        "proyectos": "proyectos",
+        "contacto": "contacto",
+    };
+
+    const id = secciones[textolimpio];
+    if (id) {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.scrollIntoView({ behavior: "smooth" });
+        } else {
+            console.error("Elemento no encontrado:", id);
+        }
+    } else if (textolimpio === "arriba") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
-   }
+};
+
    const toggleVisibility = () => {
     setIsVisibles(!isVisibles);
   };
