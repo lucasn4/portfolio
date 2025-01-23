@@ -403,7 +403,7 @@ export const principal = () => {
         
         <footer>
             <div className='footer-line'></div>
-            <h4>@ 2025 Lucas Naranjo Sosa | All Rights Reserved</h4>
+            <h4>@ {new Date().getFullYear()} Lucas Naranjo Sosa | All Rights Reserved</h4>
         </footer>
     </>
   )
