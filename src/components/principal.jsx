@@ -430,6 +430,7 @@ const styles = {
         border: "1px solid #ccc",
         borderRadius: "5px",
         boxSizing: "border-box",
+        marginLeft: "40px",
     },
   };
 export default principal
