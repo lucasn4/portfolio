@@ -395,7 +395,7 @@ export const principal = () => {
                         <i className="bi bi-linkedin"></i>LINKEDIN: Lucas Naranjo Sosa
                     </a></li>
                 <li><i className="bi bi-phone"></i>CELULAR: 381 334 2620</li>
-                <li><i className="bi bi-envelope"></i>MAIL: lucas_naranjo@live.com</li>
+                <li><i className="bi bi-envelope"></i>MAIL: lucasnaranjososaok@gmail.com</li>
             </ul>
         </section>
         
